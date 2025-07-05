@@ -1,0 +1,111 @@
+Formattan sonra istenilen TABLO FORMATI ÖRNEK :
+Keyword	Location	Company name	Category	Website	Phone	Müşteri İsim Soyisim	Müşteri Aktivite	Sonraki Arama	Yorum (Not)	Destekçi Scriptler Site yorumu	Genel Puan CMS  CMS grubu	E-Ticaret İzi	Site Hızı	Site Trafiği	Log	CMS Puanı	E-Ticaret İzi Puanı	Site Hızı Puanı	Site Trafiği Puanı	Rating Puanı	Review Puanı	Maplink puanı	Address	City	Rating count	Review	Maplink
+İlk olan tablo yapısı :
+Keyword	Location	Company name	Category	Website	CountryCode	Phone	Email 1	Email 2	Email 3	Lat	Long	Address	City	State	Pincode	Rating count	Review	Cid	Maplink						
+
+---
+PUANLAMA MANTIĞI (SATIŞ POTANSİYELİ ODAKLI)
+
+- Her kriterin (CMS Puanı, E-Ticaret İzi Puanı, Site Hızı Puanı, Görsel Puan, Rating Puanı, Review Puanı, vb.) kendi sütunu vardır.
+- Her puan, ilgili analiz sonrası otomatik olarak kendi sütununa yazılır.
+- "Genel Puan" sütunu, bu kriterlerin toplamı veya belirlenen ağırlıklarla ortalaması olarak hesaplanır.
+- Yüksek puan = Yüksek satış potansiyeli (Bizim için en değerli müşteri adayı yüksek puanlı olandır).
+
+Kriterler ve örnek puanlama:
+
+1. CMS Puanı:
+   - Açık kaynak veya kolay taşınabilir altyapı (WordPress, Wix, Blogger, düz HTML): 4-5 puan
+   - Rakip e-ticaret altyapısı (Shopify, Ticimax, T-Soft, Ideasoft): 1-2 puan
+   - Özel yazılım veya tespit edilemeyen: 3 puan
+   - Hiçbir altyapı veya çok eski/kötü site: 5 puan
+   - Not: E-Ticaret izi burada dikkate alınmaz, sadece altyapıya göre puan verilir.
+
+2. E-Ticaret İzi Puanı:
+   - Sadece "E-Ticaret İzi" sütununda kontrol edilir.
+   - E-ticaret izi varsa: 2 puan
+   - Yoksa: 0 puan
+   - Not: CMS puanında tekrar dikkate alınmaz.
+
+3. Site Hızı Puanı:
+   - <1000 ms: 1 puan
+   - 1000-2000 ms: 2 puan
+   - 2000-3000 ms: 3 puan
+   - 3000-4000 ms: 4 puan
+   - >4000 ms veya açılamıyor: 5 puan
+   - Not: Yavaş siteler daha yüksek puan alır, çünkü satış potansiyeli yüksektir.
+
+4. Görsel Puan (Maps):
+   - Kullanıcı tarafından 1-5 arası puanlanır (dükkanın zenginliği/görsel kalitesi)
+
+5. Rating Puanı:
+   - 4.5+ : 0 puan
+   - 4.0 – 4.4 : 1 puan
+   - <4.0 : 2 puan
+   - Yok : 2 puan
+   - Not: Düşük rating veya hiç rating yoksa satış potansiyeli yüksektir.
+
+6. Review (Yorum Sayısı) Puanı:
+   - >100 : 0 puan
+   - 20 – 100 : 1 puan
+   - <20 : 2 puan
+   - Yok : 2 puan
+   - Not: Az yorumu olan veya hiç yorumu olmayanlar satışa daha açıktır.
+
+GENEL PUAN = (Tüm kriter puanlarının toplamı veya belirlenen ağırlıklarla ortalaması)
+
+Yüksek puan = Yüksek satış potansiyeli!
+---
+
+---
+SON GÜNCELLEMELER ve GELECEKTEKİ GÜNCELLEME TALİMATI (08.06.2024)
+
+Bu bölümde, sistemde yapılan son değişiklikler ve ileride güncelleme gerektiğinde nasıl işlem yapılacağı açıklanmıştır.
+
+1. Tüm analizler (CMS, E-Ticaret İzi, Site Hızı, Puanlama, Görsel Puanı) ayrı menü butonları ile çalışır. Her analiz fonksiyonu aktif sayfada, başlıklar ve verilerle otomatik uyumlu şekilde çalışır.
+2. E-ticaret platformu tespit edilenlerde (Ticimax, T-Soft, Ideasoft, Shopify) ayrıca e-ticaret izi kontrolü yapılmaz.
+3. Site hızı gerçek ölçümle (UrlFetchApp) alınır ve puanlamaya yansır.
+4. Puanlama sistemi, aşağıdaki kurallara göre günceldir (bkz. "PUANLAMA MANTIĞI").
+5. Görsel puanı manuel girilir, diğer tüm analizler otomatik yapılır.
+6. Randevu modülü, seçili satır için form açıp kaydeder.
+7. Hatalı veya eksik URL'lerde analiz kolonları boş bırakılır.
+8. Kodlar modüler, hızlı ve Google Apps Script limitlerine uygun şekilde optimize edilmiştir.
+9. Test dosyası ve dökümantasyon günceldir.
+10. Kullanıcıya hiçbir manuel işlem bırakılmamıştır, tüm işlemler menüden tek tıkla yapılabilir.
+
+GÜNCELLEME TALİMATI:
+- Gelecekte sistemde bir değişiklik/güncelleme yapılması gerekirse, lütfen bu "SON GÜNCELLEMELER" bölümünün altına tarih ve açıklama ile birlikte yeni değişiklikleri ekleyin.
+- Ben (asistan) her zaman en güncel ve doğru kodu, buradaki notlara bakarak günceller ve uygularım.
+- Örnek güncelleme kaydı:
+  [15.07.2024] - Site Trafiği puanlaması eklendi. Trafik verisi "Site Trafiği" sütununa yazılıyor ve puanlamaya dahil edildi.
+
+---
+
+[08.06.2024] - Randevu Al Modülü Eklendi
+- Menüye 'Randevu Al' butonu eklendi.
+- Kullanıcı, istediği satırı seçip butona tıkladığında, tarih-saat ve not girebileceği bir form açılır.
+- Girilen bilgiler, otomatik olarak yeni bir 'Randevu Kayıtları' sheet'ine kaydedilir.
+- Randevu kaydı; Tarih-Saat, Not, Kaynak Sayfa, Satır Bilgisi ve Kayıt Zamanı olarak saklanır.
+- Kullanıcı hiçbir manuel işlem yapmaz, tüm süreç otomatiktir.
+- Kullanım: Satırı seç, menüden 'Randevu Al'ı tıkla, formu doldur, kaydın otomatik oluşsun.
+
+---
+[08.06.2024] - CMS Analizi Hızlandırma
+- CMS analizinde timeout 3 saniyeye düşürüldü.
+- CMS Adı dolu olan satırlar atlanıyor, sadece boş olanlar analiz ediliyor.
+- Hata veya yanıt alınamayan siteler hızlıca 'Bilinmiyor' olarak işaretleniyor.
+- Kodun tamamı güncellendi.
+---
+
+[08.06.2024] - Büyük Performans ve Kullanıcı Deneyimi Güncellemesi
+- CMS ve Site Hızı analizleri tek fetch ile birleştirildi. Artık CMS analizi sırasında site hızı da ölçülüyor.
+- 'Site Hızı Analizi' butonu ve fonksiyonu kaldırıldı.
+- Tüm analizlerde sadece eksik/boş satırlar işleniyor, gereksiz tekrar yok.
+- Batch (parça parça) işleme ve her 20 satırda bir ilerleme göstergesi eklendi.
+- Hatalı/çok yavaş siteler oturum içi kara listeye alınıyor, tekrar denenmiyor.
+- Analiz sonuçları geçici bellekte (cache) tutuluyor, aynı siteye tekrar fetch yapılmıyor.
+- Analiz sonunda kullanıcıya özet rapor gösteriliyor (başarılı, hatalı, toplam).
+- Menüye 'Seçili Satırları Analiz Et' butonu eklendi.
+- Kodun tamamı sadeleştirildi, gereksiz fonksiyonlar ve butonlar silindi.
+- Kullanıcı deneyimi ve hız maksimum seviyeye çıkarıldı.
+---
+
